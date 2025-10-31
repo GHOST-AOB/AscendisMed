@@ -70,7 +70,7 @@ const CreateAccountScreen = () => {
             <TextInput
               style={styles.passwordInput}
               placeholder="Password"
-              placeholderTextColor="#8B92A8"
+              placeholderTextColor="#A0A0A0"
               value={password}
               onChangeText={setPassword}
               secureTextEntry={!showPassword}
@@ -87,7 +87,7 @@ const CreateAccountScreen = () => {
             <TextInput
               style={styles.passwordInput}
               placeholder="Confirm Password"
-              placeholderTextColor="#8B92A8"
+              placeholderTextColor="#A0A0A0"
               value={confirmPassword}
               onChangeText={setConfirmPassword}
               secureTextEntry={!showConfirmPassword}

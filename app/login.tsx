@@ -49,7 +49,7 @@ export default function AscendisMedLogin() {
           <TextInput
             style={styles.input}
             placeholder="Email or Phone"
-            placeholderTextColor="#6b7280"
+            placeholderTextColor="#A0A0A0"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -61,7 +61,7 @@ export default function AscendisMedLogin() {
             <TextInput
               style={styles.passwordInput}
               placeholder="Password"
-              placeholderTextColor="#6b7280"
+              placeholderTextColor="#A0A0A0"
               value={password}
               onChangeText={setPassword}
               secureTextEntry={!showPassword}
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     fontSize: 16,
-    color: '#1f2937',
+    color: '#12185D',
     marginBottom: 16,
   },
   passwordContainer: {
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingRight: 48,
     fontSize: 16,
-    color: '#1f2937',
+    color: '#12185D',
   },
   eyeIcon: {
     position: 'absolute',
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
   loginButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#1f2937',
+    color: '#12185D',
   },
   forgotPassword: {
     alignItems: 'center',
