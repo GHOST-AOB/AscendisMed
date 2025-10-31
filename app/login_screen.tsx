@@ -1,17 +1,20 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
+    Image,
+    KeyboardAvoidingView,
+    Platform,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
 const LoginScreen = () => {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -27,8 +30,7 @@ const LoginScreen = () => {
   };
 
   const handleSignUp = () => {
-    console.log('Sign up pressed');
-    // Add sign up navigation here
+    router.push('/create_account');
   };
 
   return (
@@ -41,21 +43,15 @@ const LoginScreen = () => {
           contentContainerStyle={styles.scrollContent}
           keyboardShouldPersistTaps="handled"
         >
-          {/* Logo */}
-          <View style={styles.logoContainer}>
-            <View style={styles.logoCircle}>
-              <View style={styles.logoInnerCircle} />
-            </View>
-            <Text style={styles.logoText}>AscendisMed</Text>
-            <Text style={styles.logoSubtext}>INTERNATIONAL</Text>
-          </View>
+          {/* Project Logo/Brand Image */}
+                    <View style={styles.brandContainer}>
+                      <Image
+                        source={require('../assets/images/med 1.png')}
+                        style={styles.brandImage}
+                        resizeMode="contain" />
+                    </View>
 
-          {/* Welcome Text */}
-          <Text style={styles.welcomeText}>Welcome Back!</Text>
-          <Text style={styles.subtitleText}>
-            Login to continue using our services.
-          </Text>
-
+  
           {/* Form */}
           <View style={styles.formContainer}>
             {/* Email Input */}
@@ -130,55 +126,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 40,
   },
-  logoContainer: {
+  brandContainer: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 80,
   },
-  logoCircle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    borderWidth: 4,
-    borderColor: '#D4AF37',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 15,
-    borderTopColor: 'transparent',
-    borderLeftColor: 'transparent',
-    transform: [{ rotate: '45deg' }],
+  brandImage: {
+    width: 350,
+    height: 150,
+    marginBottom: 16,
   },
-  logoInnerCircle: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: '#1a2b5e',
-  },
-  logoText: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    letterSpacing: 0.5,
-  },
-  logoSubtext: {
-    fontSize: 12,
-    color: '#FFFFFF',
-    letterSpacing: 2,
-    marginTop: 2,
-  },
-  welcomeText: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  subtitleText: {
-    fontSize: 14,
-    color: '#FFFFFF',
-    textAlign: 'center',
-    marginBottom: 35,
-    opacity: 0.9,
-  },
+  
   formContainer: {
     width: '100%',
   },

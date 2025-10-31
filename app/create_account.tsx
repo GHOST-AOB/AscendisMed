@@ -1,15 +1,17 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  StatusBar,
-  SafeAreaView,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
 const CreateAccountScreen = () => {
+  const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -24,8 +26,7 @@ const CreateAccountScreen = () => {
   };
 
   const handleLogin = () => {
-    console.log('Login pressed');
-    // Add login navigation here
+    router.push('/login_screen');
   };
 
   return (

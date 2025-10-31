@@ -1,73 +1,65 @@
 /**
  * AscendisMed International - Login Screen
-  */
+ */
 
+import { useRouter } from 'expo-router';
 import * as React from 'react';
 import {
-  View,
+  Image,
+  Platform,
+  StatusBar,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  StatusBar,
-  SafeAreaView,
-  Platform,
+  View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
+function AscendisMedLogin() {
+  const router = useRouter();
+  const handleCreateAccount = () => {
+    // Navigate to CreateAccount screen
+    router.push('/create_account');
+  };
 
+  const handleLogin = () => {
+    // Navigate to Login screen
+    router.push('/login_screen');
+  };
 
-const AscendisMedLogin = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <View style={styles.container}>
         {/* Status Bar */}
         <View style={styles.statusBar}>
-          
+
         </View>
 
         {/* Main Content */}
         <View style={styles.content}>
-          {/* Logo */}
-          <View style={styles.logoContainer}>
-            <View style={styles.logo}>
-              {[...Array(12)].map((_, i) => (
-                <View
-                  key={i}
-                  style={[
-                    styles.logoSegment,
-                    {
-                      transform: [
-                        { rotate: `${i * 30}deg` },
-                        { translateY: -30 },
-                      ],
-                    },
-                  ]}
-                />
-              ))}
-            </View>
-          </View>
-
-          {/* Brand Name */}
+          {/* Project Logo/Brand Image */}
           <View style={styles.brandContainer}>
-            <View style={styles.brandNameRow}>
-              <Text style={styles.ascendis}>Ascendis</Text>
-              <Text style={styles.med}>Med</Text>
-            </View>
-            <Text style={styles.brandSubtitle}>INTERNATIONAL</Text>
+            <Image
+              source={require('../assets/images/white_background_logo.png')}
+              style={styles.brandImage}
+              resizeMode="contain" />
           </View>
 
           {/* Buttons */}
           <View style={styles.buttonContainer}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.createButton}
               activeOpacity={0.7}
+              onPress={handleCreateAccount}
             >
               <Text style={styles.createButtonText}>Create your account</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.loginButton}
               activeOpacity={0.8}
+              onPress={handleLogin}
             >
               <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>
@@ -76,7 +68,7 @@ const AscendisMedLogin = () => {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -114,47 +106,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 40,
   },
-  logoContainer: {
-    marginBottom: 32,
-  },
-  logo: {
-    width: 80,
-    height: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logoSegment: {
-    position: 'absolute',
-    width: 24,
-    height: 8,
-    backgroundColor: '#D4AF37',
-    borderRadius: 4,
-  },
   brandContainer: {
     alignItems: 'center',
-    marginBottom: 64,
+    marginBottom: 80,
   },
-  brandNameRow: {
-    flexDirection: 'row',
-    marginBottom: 4,
-  },
-  ascendis: {
-    fontSize: 34,
-    fontWeight: '600',
-    color: '#12185D',
-    letterSpacing: 0.5,
-  },
-  med: {
-    fontSize: 34,
-    fontWeight: '600',
-    color: '#12185D',
-    letterSpacing: 0.5,
-  },
-  brandSubtitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    letterSpacing: 3,
-    color: '#12185D',
+  brandImage: {
+    width: 350,
+    height: 150,
+    marginBottom: 16,
   },
   buttonContainer: {
     width: '100%',
