@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Alert,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -23,8 +22,6 @@ const MedicalApp = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#12185D" />
-      
       {/* Welcome Section */}
       <View style={styles.welcomeSection}>
         <Text style={styles.welcomeText}>Hello Keith, Welcome</Text>

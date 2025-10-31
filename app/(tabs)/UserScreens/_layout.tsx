@@ -1,17 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function UserScreensLayout() {
   return (
-    <>
-      {/* SOS Banner */}
-      <View style={styles.sosBanner}>
-        <Text style={styles.sosText}>
-          Need an ambulance? Tap the SOS button for immediate help.
-        </Text>
-      </View>
-      
+    <SafeAreaProvider>
+      <StatusBar style="dark" backgroundColor="#FFFFFF" />
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: '#12185D',
@@ -73,24 +68,9 @@ export default function UserScreensLayout() {
           }}
         />
       </Tabs>
-    </>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  sosBanner: {
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E5E7EB',
-  },
-  sosText: {
-    fontSize: 14,
-    color: '#12185D',
-    fontWeight: '500',
-    textAlign: 'center',
-  },
-});
+
 
