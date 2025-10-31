@@ -1,3 +1,4 @@
+import { FontAwesome5, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -18,13 +19,13 @@ export default function MembershipScreen() {
   };
 
   const benefits = [
-    { icon: '✨', text: '24/7 Case Facilitator' },
-    { icon: '🏥', text: 'Annual Executive Health Check.' },
-    { icon: '👨‍⚕️', text: 'Dedicated Physician Concierge' },
-    { icon: '🛡️', text: 'Priority Specialist Access in Kampala.' },
-    { icon: '🚁', text: 'Emergency Medical Evacuation' },
-    { icon: '💳', text: 'Gold-Plated Membership Card' },
-    { icon: '📅', text: 'Private Seminars & Networking Events.' },
+    { iconType: 'MaterialIcons', iconName: 'support-agent', text: '24/7 Case Facilitator' },
+    { iconType: 'FontAwesome5', iconName: 'heartbeat', text: 'Annual Executive Health Check.' },
+    { iconType: 'FontAwesome5', iconName: 'user-md', text: 'Dedicated Physician Concierge' },
+    { iconType: 'MaterialIcons', iconName: 'location-on', text: 'Priority Specialist Access in Kampala.' },
+    { iconType: 'FontAwesome5', iconName: 'helicopter', text: 'Emergency Medical Evacuation' },
+    { iconType: 'Ionicons', iconName: 'card', text: 'Gold-Plated Membership Card' },
+    { iconType: 'MaterialIcons', iconName: 'event', text: 'Private Seminars & Networking Events.' },
   ];
 
   return (
@@ -54,7 +55,17 @@ export default function MembershipScreen() {
           <View style={styles.benefitsList}>
             {benefits.map((benefit, index) => (
               <View key={index} style={styles.benefitItem}>
-                <Text style={styles.benefitIcon}>{benefit.icon}</Text>
+                <View style={styles.benefitIconContainer}>
+                  {benefit.iconType === 'Ionicons' && (
+                    <Ionicons name={benefit.iconName as any} size={20} color="#12185D" />
+                  )}
+                  {benefit.iconType === 'MaterialIcons' && (
+                    <MaterialIcons name={benefit.iconName as any} size={20} color="#12185D" />
+                  )}
+                  {benefit.iconType === 'FontAwesome5' && (
+                    <FontAwesome5 name={benefit.iconName as any} size={20} color="#12185D" />
+                  )}
+                </View>
                 <Text style={styles.benefitText}>{benefit.text}</Text>
               </View>
             ))}
@@ -140,8 +151,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
-  benefitIcon: {
-    fontSize: 20,
+  benefitIconContainer: {
+    width: 32,
+    height: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
     marginRight: 12,
   },
   benefitText: {
