@@ -119,7 +119,7 @@ const CreateAccountScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1f4d',
+    backgroundColor: '#12185D',
   },
   content: {
     flex: 1,
@@ -133,12 +133,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: '600',
-    color: '#F5B754',
+    color: '#D3AF37',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#F5B754',
+    color: '#D3AF37',
   },
   form: {
     width: '100%',
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     fontSize: 16,
     marginBottom: 16,
-    color: '#1a1f4d',
+    color: '#12185D',
   },
   passwordContainer: {
     flexDirection: 'row',
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 14,
     fontSize: 16,
-    color: '#1a1f4d',
+    color: '#12185D',
   },
   eyeButton: {
     padding: 4,
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   signUpButton: {
-    backgroundColor: '#F5B754',
+    backgroundColor: '#D3AF37',
     borderRadius: 8,
     paddingVertical: 16,
     alignItems: 'center',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   signUpButtonText: {
-    color: '#1a1f4d',
+    color: '#12185D',
     fontSize: 18,
     fontWeight: '600',
   },
@@ -192,11 +192,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   loginText: {
-    color: '#F5B754',
+    color: '#D3AF37',
     fontSize: 14,
   },
   loginLink: {
-    color: '#F5B754',
+    color: '#D3AF37',
     fontSize: 14,
     fontWeight: '600',
     textDecorationLine: 'underline',

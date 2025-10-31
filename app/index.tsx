@@ -121,19 +121,19 @@ const styles = StyleSheet.create({
   createButton: {
     backgroundColor: '#FFFFFF',
     borderWidth: 2,
-    borderColor: '#1a3a5c',
+    borderColor: '#12185D',
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
     marginBottom: 12,
   },
   createButtonText: {
-    color: '#1a3a5c',
+    color: '#12185D',
     fontSize: 16,
     fontWeight: '500',
   },
   loginButton: {
-    backgroundColor: '#D4AF37',
+    backgroundColor: '#D3AF37',
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',

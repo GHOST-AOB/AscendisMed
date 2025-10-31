@@ -115,7 +115,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a2b5e',
+    backgroundColor: '#12185D',
   },
   keyboardView: {
     flex: 1,
@@ -169,19 +169,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   loginButton: {
-    backgroundColor: '#D4AF37',
+    backgroundColor: '#D3AF37',
     borderRadius: 8,
     paddingVertical: 16,
     alignItems: 'center',
     marginBottom: 15,
   },
   loginButtonText: {
-    color: '#1a2b5e',
+    color: '#12185D',
     fontSize: 18,
     fontWeight: '600',
   },
   forgotPasswordText: {
-    color: '#D4AF37',
+    color: '#D3AF37',
     fontSize: 14,
     textAlign: 'center',
     marginBottom: 20,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   signUpLink: {
-    color: '#D4AF37',
+    color: '#D3AF37',
     fontSize: 14,
     fontWeight: '600',
   },

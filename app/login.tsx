@@ -26,7 +26,7 @@ export default function AscendisMedLogin() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <LinearGradient
-        colors={['#1e3a8a', '#1e40af', '#1e3a8a']}
+        colors={['#12185D', '#12185D', '#12185D']}
         style={styles.gradient}
       >
         <View style={styles.card}>
@@ -84,7 +84,7 @@ export default function AscendisMedLogin() {
             activeOpacity={0.8}
           >
             <LinearGradient
-              colors={['#fbbf24', '#eab308']}
+              colors={['#D3AF37', '#D3AF37']}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
               style={styles.loginGradient}
@@ -117,7 +117,7 @@ export default function AscendisMedLogin() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1e3a8a',
+    backgroundColor: '#12185D',
   },
   gradient: {
     flex: 1,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   card: {
     width: '100%',
     maxWidth: 400,
-    backgroundColor: '#1e40af',
+    backgroundColor: '#12185D',
     borderRadius: 12,
     padding: 32,
     shadowColor: '#000',
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
     borderWidth: 4,
-    borderColor: '#fbbf24',
+    borderColor: '#D3AF37',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 16,
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     fontSize: 14,
-    color: '#fbbf24',
+    color: '#D3AF37',
   },
   signUpContainer: {
     flexDirection: 'row',
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   signUpLink: {
     fontSize: 14,
-    color: '#fbbf24',
+    color: '#D3AF37',
     fontWeight: '600',
   },
 });
