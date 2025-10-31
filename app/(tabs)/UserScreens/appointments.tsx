@@ -1,12 +1,12 @@
 import React, { JSX, useState } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function BookAppointmentScreen() {
   const [selectedDate, setSelectedDate] = useState(8);
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 2,
   },
   selectedDay: {
-    backgroundColor: '#D4A574',
+    backgroundColor: '#D3AF37',
   },
   dayText: {
     fontSize: 14,
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#4169E1',
+    color: '#12185D',
     marginTop: 24,
     marginBottom: 16,
   },
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   selectedTimeSlot: {
-    backgroundColor: '#D4A574',
+    backgroundColor: '#D3AF37',
   },
   timeSlotText: {
     fontSize: 14,

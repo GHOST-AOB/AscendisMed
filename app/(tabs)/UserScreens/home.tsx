@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  StatusBar,
-  SafeAreaView,
-  Alert,
+    Alert,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MedicalApp = () => {
   const handleSOSPress = () => {
@@ -23,7 +23,7 @@ const MedicalApp = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#1e3a8a" />
+      <StatusBar barStyle="light-content" backgroundColor="#12185D" />
       
       {/* Welcome Section */}
       <View style={styles.welcomeSection}>
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#000000',
+    color: '#12185D',
   },
   mainContent: {
     flex: 1,
-    backgroundColor: '#1e3a8a',
+    backgroundColor: '#12185D',
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: '#eab308',
+    backgroundColor: '#D3AF37',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 40,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   sosText: {
     fontSize: 42,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: '#12185D',
     letterSpacing: 4,
   },
   infoCard: {
@@ -125,17 +125,17 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#000000',
+    color: '#12185D',
     marginBottom: 4,
   },
   cardSubtitle: {
     fontSize: 13,
-    color: '#1e3a8a',
+    color: '#12185D',
     lineHeight: 18,
   },
   arrow: {
     fontSize: 24,
-    color: '#1e3a8a',
+    color: '#12185D',
     marginLeft: 10,
   },
 });

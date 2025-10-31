@@ -1,130 +1,96 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 
-type TabName = 'Home' | 'Appointments' | 'Membership' | 'Profile';
-
-interface LayoutProps {
-  activeTab?: TabName;
-  onTabPress?: (tab: TabName) => void;
-  children?: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({
-  activeTab = 'Home',
-  onTabPress,
-  children,
-}) => {
-  const tabs: { name: TabName; icon: keyof typeof Ionicons.glyphMap }[] = [
-    { name: 'Home', icon: 'home-outline' },
-    { name: 'Appointments', icon: 'calendar-outline' },
-    { name: 'Membership', icon: 'card-outline' },
-    { name: 'Profile', icon: 'person-outline' },
-  ];
-
+export default function UserScreensLayout() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#1E3A8A" />
-      
+    <>
       {/* SOS Banner */}
       <View style={styles.sosBanner}>
         <Text style={styles.sosText}>
-          Tap the SOS button for immediate help.
+          Need an ambulance? Tap the SOS button for immediate help.
         </Text>
       </View>
-
-      {/* Navigation Bar */}
-      <View style={styles.navigationBar}>
-        {tabs.map((tab) => (
-          <TouchableOpacity
-            key={tab.name}
-            style={styles.tabButton}
-            onPress={() => onTabPress?.(tab.name)}
-            activeOpacity={0.7}
-          >
-            <Ionicons
-              name={tab.icon}
-              size={28}
-              color={activeTab === tab.name ? '#1E3A8A' : '#3B4F8A'}
-            />
-            <Text
-              style={[
-                styles.tabLabel,
-                activeTab === tab.name && styles.tabLabelActive,
-              ]}
-            >
-              {tab.name}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-
-      {/* Content Area */}
-      <View style={styles.content}>{children}</View>
-    </SafeAreaView>
+      
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: '#12185D',
+          tabBarInactiveTintColor: '#6B7280',
+          tabBarStyle: {
+            backgroundColor: '#D3AF37',
+            borderTopWidth: 0,
+            elevation: 8,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: -2 },
+            shadowOpacity: 0.1,
+            shadowRadius: 4,
+            height: 70,
+            paddingBottom: 10,
+            paddingTop: 10,
+          },
+          tabBarLabelStyle: {
+            fontSize: 12,
+            fontWeight: '600',
+            marginTop: 4,
+          },
+          headerShown: false,
+        }}
+      >
+        <Tabs.Screen
+          name="home"
+          options={{
+            title: 'Home',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="home" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="appointments"
+          options={{
+            title: 'Appointments',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="calendar" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="emergencies"
+          options={{
+            title: 'Emergencies',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="medical" size={size} color={color} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: 'Profile',
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="person" size={size} color={color} />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
   sosBanner: {
     backgroundColor: '#FFFFFF',
-    paddingVertical: 16,
+    paddingVertical: 12,
     paddingHorizontal: 20,
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
   },
   sosText: {
-    fontSize: 16,
-    color: '#1E3A8A',
+    fontSize: 14,
+    color: '#12185D',
     fontWeight: '500',
     textAlign: 'center',
   },
-  navigationBar: {
-    flexDirection: 'row',
-    backgroundColor: '#EAB308',
-    paddingVertical: 16,
-    paddingHorizontal: 8,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: -2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-  tabButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 8,
-  },
-  tabLabel: {
-    fontSize: 12,
-    color: '#3B4F8A',
-    marginTop: 4,
-    fontWeight: '600',
-  },
-  tabLabelActive: {
-    color: '#1E3A8A',
-    fontWeight: '700',
-  },
-  content: {
-    flex: 1,
-    backgroundColor: '#F9FAFB',
-  },
 });
-
-export default Layout;
 

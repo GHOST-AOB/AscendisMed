@@ -20,6 +20,8 @@ export default function AscendisMedLogin() {
   const handleLogin = () => {
     console.log('Login attempted with:', { email, password });
     // Add your login logic here
+    // For now, navigate to UserScreens after login
+    router.push('/(tabs)/UserScreens/home');
   };
 
   return (

@@ -22,6 +22,8 @@ const LoginScreen = () => {
   const handleLogin = () => {
     console.log('Login pressed', { email, password });
     // Add your login logic here
+    // For now, navigate to UserScreens after login
+    router.push('/(tabs)/UserScreens/home');
   };
 
   const handleForgotPassword = () => {
