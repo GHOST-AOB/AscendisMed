@@ -1,5 +1,5 @@
 /**
- * AscendisMed International - Login Screen
+ * AscendisMed International - Universal Login Screen
  */
 
 import { useRouter } from 'expo-router';
