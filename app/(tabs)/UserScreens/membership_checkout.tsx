@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import {
-  View,
+  ScrollView,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  SafeAreaView,
+  View,
 } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 export default function MembershipCheckout() {
   const [memberName, setMemberName] = useState('');
   const [email, setEmail] = useState('');
@@ -126,13 +125,13 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     fontSize: 24,
-    color: '#333',
+    color: '#12185D',
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: '600',
     marginLeft: 12,
-    color: '#333',
+    color: '#12185D',
   },
   membershipInfo: {
     backgroundColor: '#fff',
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
   membershipTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
     marginBottom: 8,
   },
   priceRow: {
@@ -157,10 +156,10 @@ const styles = StyleSheet.create({
   priceText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
   },
   formCard: {
-    backgroundColor: '#F4C542',
+    backgroundColor: '#D3AF37',
     margin: 16,
     padding: 20,
     borderRadius: 12,
@@ -174,17 +173,17 @@ const styles = StyleSheet.create({
   formHeaderText: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
   },
   changeButton: {
     fontSize: 14,
-    color: '#333',
+    color: '#12185D',
     fontWeight: '500',
   },
   label: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
     marginTop: 16,
     marginBottom: 8,
   },
@@ -204,7 +203,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
     marginBottom: 12,
   },
   paymentOption: {
@@ -225,7 +224,7 @@ const styles = StyleSheet.create({
   },
   paymentText: {
     fontSize: 15,
-    color: '#333',
+    color: '#12185D',
   },
   chevron: {
     fontSize: 24,
@@ -250,10 +249,10 @@ const styles = StyleSheet.create({
   subtotalAmount: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
   },
   purchaseButton: {
-    backgroundColor: '#F4C542',
+    backgroundColor: '#D3AF37',
     borderRadius: 8,
     padding: 16,
     alignItems: 'center',
@@ -261,6 +260,6 @@ const styles = StyleSheet.create({
   purchaseButtonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#12185D',
   },
 });
