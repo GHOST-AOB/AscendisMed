@@ -1,28 +1,31 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    Image,
-    KeyboardAvoidingView,
-    Platform,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
+import { useUser } from './contexts/UserContext';
 
 const LoginScreen = () => {
   const router = useRouter();
+  const { setUserType } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     console.log('Login pressed', { email, password });
-    // Add your login logic here
-    // For now, navigate to UserScreens after login
+    // Set user type as 'user' for regular login
+    setUserType('user');
+    // Navigate to UserScreens after login
     router.push('/(tabs)/UserScreens/home');
   };
 

@@ -10,17 +10,20 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
+import { useUser } from './contexts/UserContext';
 
 export default function AscendisMedLogin() {
   const router = useRouter();
+  const { setUserType } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
     console.log('Login attempted with:', { email, password });
-    // Add your login logic here
-    // For now, navigate to UserScreens after login
+    // Set user type as 'user' for regular login
+    setUserType('user');
+    // Navigate to UserScreens after login
     router.push('/(tabs)/UserScreens/home');
   };
 

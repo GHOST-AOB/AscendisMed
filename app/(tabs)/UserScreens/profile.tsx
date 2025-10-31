@@ -2,17 +2,19 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-    Image,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
+import { useUser } from '../../contexts/UserContext';
 
 export default function ProfileScreen() {
   const router = useRouter();
+  const { setUserType } = useUser();
 
   const profileOptions = [
     {
@@ -66,6 +68,9 @@ export default function ProfileScreen() {
 
   const handleLogout = () => {
     console.log('Logging out...');
+    // Reset user type to null
+    setUserType(null);
+    // Navigate back to index
     router.push('/');
   };
 
@@ -109,6 +114,19 @@ export default function ProfileScreen() {
               <Ionicons name="chevron-forward" size={20} color="#6B7280" />
             </TouchableOpacity>
           ))}
+        </View>
+
+        {/* Test Driver Access (for demonstration) */}
+        <View style={styles.testContainer}>
+          <Text style={styles.testTitle}>Access Test</Text>
+          <TouchableOpacity
+            style={styles.testButton}
+            onPress={() => router.push('/DriverScreens/dashboard')}
+            activeOpacity={0.7}
+          >
+            <Ionicons name="car" size={20} color="#12185D" />
+            <Text style={styles.testButtonText}>Try Driver Dashboard (Should be blocked)</Text>
+          </TouchableOpacity>
         </View>
 
         {/* App Information */}
@@ -269,6 +287,31 @@ const styles = StyleSheet.create({
   appVersionText: {
     fontSize: 14,
     color: '#6B7280',
+  },
+  testContainer: {
+    marginBottom: 30,
+  },
+  testTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#12185D',
+    marginBottom: 16,
+  },
+  testButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FEF3C7',
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#F59E0B',
+  },
+  testButtonText: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: '#12185D',
+    marginLeft: 8,
+    flex: 1,
   },
   logoutButton: {
     flexDirection: 'row',
