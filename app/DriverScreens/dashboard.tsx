@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function DriverDashboard() {
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
   viewButton: {
-    backgroundColor: '#d4a849',
+    backgroundColor: '#D3AF37',
     paddingHorizontal: 20,
     paddingVertical: 8,
     borderRadius: 6,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   statusBadge: {
-    backgroundColor: '#d4a849',
+    backgroundColor: '#D3AF37',
     paddingHorizontal: 16,
     paddingVertical: 6,
     borderRadius: 6,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   offlineButton: {
-    backgroundColor: '#d4a849',
+    backgroundColor: '#D3AF37',
     paddingVertical: 12,
     borderRadius: 6,
     alignItems: 'center',

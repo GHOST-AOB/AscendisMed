@@ -67,6 +67,44 @@ export default function UserScreensLayout() {
             ),
           }}
         />
+        
+        {/* Hidden screens - not shown in tab bar */}
+        <Tabs.Screen
+          name="chat"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
+        <Tabs.Screen
+          name="map"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
+        <Tabs.Screen
+          name="membership_checkout"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
+        <Tabs.Screen
+          name="memberships"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
+        <Tabs.Screen
+          name="my_membership"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
+        <Tabs.Screen
+          name="notifications"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
       </Tabs>
     </SafeAreaProvider>
   );

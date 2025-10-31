@@ -1,6 +1,6 @@
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function JobDetailsScreen() {
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   criticalBadge: {
-    backgroundColor: '#D3AF37',
+    backgroundColor: '#EF4444',
     paddingHorizontal: 12,
     paddingVertical: 4,
     borderRadius: 4,
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
   actionButtonText: {
-    color: '#1a1f5c',
+    color: '#12185D',
     fontSize: 14,
     fontWeight: '600',
   },
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   confirmButtonText: {
-    color: '#fff',
+    color: '#12185D',
     fontSize: 16,
     fontWeight: '600',
   },

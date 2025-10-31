@@ -1,6 +1,6 @@
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function NavigationScreen() {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
   arrivedButton: {
-    backgroundColor: '#d4a849',
+    backgroundColor: '#D3AF37',
     paddingVertical: 16,
     borderRadius: 8,
     alignItems: 'center',
