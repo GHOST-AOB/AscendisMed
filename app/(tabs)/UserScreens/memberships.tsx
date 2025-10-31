@@ -1,15 +1,22 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-  View,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
+  View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function MembershipScreen() {
+  const router = useRouter();
+
+  const handleChooseGold = () => {
+    router.push('/(tabs)/UserScreens/membership_checkout');
+  };
+
   const benefits = [
     { icon: '✨', text: '24/7 Case Facilitator' },
     { icon: '🏥', text: 'Annual Executive Health Check.' },
@@ -54,7 +61,7 @@ export default function MembershipScreen() {
           </View>
 
           {/* Choose Button */}
-          <TouchableOpacity style={styles.chooseButton}>
+          <TouchableOpacity style={styles.chooseButton} onPress={handleChooseGold}>
             <Text style={styles.chooseButtonText}>Choose Gold</Text>
           </TouchableOpacity>
         </View>
@@ -88,7 +95,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
   },
   premiumCard: {
-    backgroundColor: '#F5C248',
+    backgroundColor: '#D3AF37',
     borderRadius: 12,
     padding: 20,
     marginBottom: 16,
@@ -117,12 +124,12 @@ const styles = StyleSheet.create({
   planTitle: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#1a237e',
+    color: '#12185D',
     marginBottom: 8,
   },
   planPrice: {
     fontSize: 14,
-    color: '#1a237e',
+    color: '#12185D',
     marginBottom: 20,
   },
   benefitsList: {
@@ -140,11 +147,11 @@ const styles = StyleSheet.create({
   benefitText: {
     flex: 1,
     fontSize: 14,
-    color: '#1a237e',
+    color: '#12185D',
     lineHeight: 20,
   },
   chooseButton: {
-    backgroundColor: '#1a237e',
+    backgroundColor: '#12185D',
     borderRadius: 8,
     paddingVertical: 14,
     alignItems: 'center',
@@ -156,7 +163,7 @@ const styles = StyleSheet.create({
   },
   bottomNav: {
     flexDirection: 'row',
-    backgroundColor: '#F5C248',
+    backgroundColor: '#D3AF37',
     paddingVertical: 8,
     paddingBottom: 20,
     borderTopWidth: 1,
@@ -169,7 +176,7 @@ const styles = StyleSheet.create({
   },
   navItemActive: {
     borderBottomWidth: 3,
-    borderBottomColor: '#1a237e',
+    borderBottomColor: '#12185D',
   },
   navIcon: {
     fontSize: 24,
@@ -181,6 +188,6 @@ const styles = StyleSheet.create({
   },
   navLabelActive: {
     fontWeight: '600',
-    color: '#1a237e',
+    color: '#12185D',
   },
 });

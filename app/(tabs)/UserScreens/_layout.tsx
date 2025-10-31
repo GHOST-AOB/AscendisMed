@@ -50,11 +50,11 @@ export default function UserScreensLayout() {
           }}
         />
         <Tabs.Screen
-          name="emergencies"
+          name="memberships"
           options={{
-            title: 'Emergencies',
+            title: 'Membership',
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="medical" size={size} color={color} />
+              <Ionicons name="card" size={size} color={color} />
             ),
           }}
         />
@@ -69,6 +69,12 @@ export default function UserScreensLayout() {
         />
         
         {/* Hidden screens - not shown in tab bar */}
+        <Tabs.Screen
+          name="emergencies"
+          options={{
+            href: null, // This hides the tab
+          }}
+        />
         <Tabs.Screen
           name="chat"
           options={{
@@ -87,12 +93,7 @@ export default function UserScreensLayout() {
             href: null, // This hides the tab
           }}
         />
-        <Tabs.Screen
-          name="memberships"
-          options={{
-            href: null, // This hides the tab
-          }}
-        />
+
         <Tabs.Screen
           name="my_membership"
           options={{
