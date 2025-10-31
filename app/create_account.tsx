@@ -42,7 +42,7 @@ const CreateAccountScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Full Name"
-            placeholderTextColor="#8B92A8"
+            placeholderTextColor="#A0A0A0"
             value={fullName}
             onChangeText={setFullName}
           />
@@ -50,7 +50,7 @@ const CreateAccountScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Email"
-            placeholderTextColor="#8B92A8"
+            placeholderTextColor="#A0A0A0"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -60,7 +60,7 @@ const CreateAccountScreen = () => {
           <TextInput
             style={styles.input}
             placeholder="Phone Number"
-            placeholderTextColor="#8B92A8"
+            placeholderTextColor="#A0A0A0"
             value={phoneNumber}
             onChangeText={setPhoneNumber}
             keyboardType="phone-pad"
