@@ -5,18 +5,20 @@
 import { useRouter } from 'expo-router';
 import * as React from 'react';
 import {
-  Image,
-  Platform,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+    Image,
+    Platform,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useUser } from './contexts/UserContext';
 
 function AscendisMedLogin() {
   const router = useRouter();
+  const { setUserType } = useUser();
   const handleCreateAccount = () => {
     // Navigate to CreateAccount screen
     router.push('/create_account');
@@ -25,6 +27,12 @@ function AscendisMedLogin() {
   const handleLogin = () => {
     // Navigate to Login screen
     router.push('/login_screen');
+  };
+
+  const handleDriverLogin = () => {
+    // Set user type as driver and navigate to driver screens
+    setUserType('driver');
+    router.push('/DriverScreens/dashboard');
   };
 
   return (
@@ -61,7 +69,15 @@ function AscendisMedLogin() {
               activeOpacity={0.8}
               onPress={handleLogin}
             >
-              <Text style={styles.loginButtonText}>Login</Text>
+              <Text style={styles.loginButtonText}>Login as User</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.driverButton}
+              activeOpacity={0.8}
+              onPress={handleDriverLogin}
+            >
+              <Text style={styles.driverButtonText}>Login as Driver</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -137,8 +153,20 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 8,
     alignItems: 'center',
+    marginBottom: 12,
   },
   loginButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  driverButton: {
+    backgroundColor: '#12185D',
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  driverButtonText: {
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
